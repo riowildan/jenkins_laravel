@@ -19,6 +19,7 @@ Pipeline ini digunakan untuk melakukan proses:
 ---
 
 # CI/CD Architecture
+<img width="1400" height="427" alt="1_Osk9sX6ZWkwS2uwdH7R9vQ" src="https://github.com/user-attachments/assets/9347fc63-07ad-4659-859b-eb6524cee429" />
 
 ```
 Developer
@@ -38,15 +39,23 @@ Build + Testing Laravel Application
 
 1. **Jenkins Automation Server** digunakan untuk menjalankan proses **CI/CD** seperti build dan testing aplikasi secara otomatis.
 
-2. **GitLab Pipeline** sebenarnya juga dapat melakukan CI/CD, namun untuk implementasi pipeline yang lebih kompleks biasanya memerlukan framework tambahan yang lebih advanced.
+2. **Git Pipeline** sebenarnya juga dapat melakukan CI/CD, namun untuk implementasi pipeline yang lebih kompleks biasanya memerlukan framework tambahan yang lebih advanced.
 
 3. Repository seperti **GitHub atau GitLab** dapat digunakan sebagai **cloud storage untuk source code**, sedangkan proses automation dijalankan oleh Jenkins.
 
 4. Resource besar atau proses build yang berat dapat ditempatkan di **Jenkins Server** agar repository hosting tetap ringan.
 
+<img width="6840" height="3040" alt="jenkins-workflow-hd" src="https://github.com/user-attachments/assets/b1be9b88-530d-41e3-b6f7-80dcc1bf141e" />
+
+<p align="center">
+  <img width="899" height="453" alt="jenkins-workflow" src="https://github.com/user-attachments/assets/5f171bd3-96d1-477c-8086-ae637a4a4518" />
+</p>
+
+
 ---
 
 # Part 1 — Jenkins Installation (WSL)
+
 
 ## Masuk ke WSL
 
@@ -135,8 +144,11 @@ Copy password tersebut ke halaman login Jenkins.
 
 Pilih:
 
+<img width="1920" height="972" alt="Screenshot (299)" src="https://github.com/user-attachments/assets/fbce51ba-b977-4803-b991-4adad55cd555" />
+
 ```
 Install Suggested Plugins
+
 ```
 
 Setelah selesai, Jenkins akan masuk ke **Dashboard**.
@@ -153,6 +165,8 @@ New Item
 ```
 
 Masukkan contoh script:
+
+<img width="1920" height="971" alt="Screenshot (308)" src="https://github.com/user-attachments/assets/cbcae1b1-8640-48cf-bd1b-cebab931da76" />
 
 ```groovy
 pipeline {
@@ -308,6 +322,9 @@ GitHub → Actions → Setup Workflow
 
 Masuk ke:
 
+<img width="1920" height="988" alt="Screenshot (315)" src="https://github.com/user-attachments/assets/974c3232-0782-42fa-a0c8-6892e2b5d511" />
+
+
 ```
 Manage Jenkins → Plugins
 ```
@@ -434,6 +451,8 @@ Manage Jenkins → Credentials
 
 Tambah credential:
 
+<img width="1920" height="980" alt="Screenshot (324)" src="https://github.com/user-attachments/assets/4dbc15b2-43c9-4995-be22-56101b9125e3" />
+
 ```
 Kind: Username with password
 Username: GitHub username
@@ -459,6 +478,8 @@ workflow
 ```
 
 Copy token dan masukkan ke Jenkins.
+
+<img width="1920" height="974" alt="Screenshot (325)" src="https://github.com/user-attachments/assets/d63fc974-5e68-46d8-aba7-f15d1f152faa" />
 
 ---
 
@@ -503,6 +524,8 @@ Jenkins Pipeline
 ↓
 Build + Test Laravel Application
 ```
+
+<img width="1920" height="780" alt="Screenshot (327)" src="https://github.com/user-attachments/assets/1f4cb15c-33b4-4b28-9ea2-229ebd570983" />
 
 ---
 
