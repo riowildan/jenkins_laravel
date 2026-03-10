@@ -339,6 +339,44 @@ Install plugin berikut:
 
 ---
 
+```
+Install Tools
+
+```
+- php
+- composer
+- 
+---
+
+```bash
+sudo apt install php-cli php-json php-zip wget unzip curl -y
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+```
+
+---
+
+Tes run di pipeline:
+
+```bash
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Check Tools') {
+            steps {
+                sh 'git --version'
+                sh 'php -v'
+                sh 'composer -V'
+            }
+        }
+
+    }
+}
+```
+
+---
+
 ## Install PHP & Composer on Jenkins (WSL)
 
 ```bash
